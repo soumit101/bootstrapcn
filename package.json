@@ -21,5 +21,5 @@
     "check:generated": "node scripts/check-generated.mjs",
     "package": "node scripts/package.mjs"
   },
-  "devDependencies": { "playwright": "1.62.1" }
+  "devDependencies": { "playwright": "1.64.1" }
 }
