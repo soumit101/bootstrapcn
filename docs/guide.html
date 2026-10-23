@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Install bootstrapcn in PHP or plain HTML with two files. Learn themes, components, JavaScript APIs and contribution workflows.">
+  <title>Documentation — bootstrapcn</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='25' font-size='28'%3E/%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../dist/bootstrapcn.css"><link rel="stylesheet" href="docs.css">
+  <script type="module" src="../dist/bootstrapcn.js"></script>
+  <style>
+    .guide { max-width: 1100px; margin: auto; padding: 3rem 1.5rem; display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 3rem; }
+    .guide-nav { position: sticky; top: 6rem; align-self: start; display: grid; gap: .75rem; font-size: .8125rem; }
+    .guide-nav a { text-decoration: none; color: var(--sc-muted-foreground); }
+    .guide-content { min-width: 0; }.guide-content > section { margin-bottom: 3rem; scroll-margin-top: 6rem; }
+    .guide-content h1 { font-size: 3rem; }.guide-content h2 { margin-top: 2rem; }
+    .guide-content p,.guide-content li { line-height: 1.8; }.guide-content pre { margin-block: 1rem; background: var(--sc-muted); border: 1px solid var(--sc-border); border-radius: var(--sc-radius); }
+    .guide-content table { font-size: .8125rem; }.guide-content th,.guide-content td { white-space: normal; }
+    @media(width < 760px) { .guide { display:block; padding-top:1.5rem; }.guide-nav { position:static; display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:2rem; }.guide-content h1 { font-size:2.5rem; } }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">//</span> bootstrapcn</a><nav aria-label="Main"><a href="../index.html#components">Components</a><a class="selected" href="guide.html">Documentation</a><a href="https://github.com/soumit101/bootstrapcn">GitHub ↗</a></nav><button type="button" class="sc-button sc-button-outline sc-button-icon" data-sc-theme-toggle aria-label="Toggle color theme">◐</button></header>
+<div class="guide">
+  <nav class="guide-nav" aria-label="Documentation"><a href="#start">Getting started</a><a href="#installation">Installation</a><a href="#usage">Using components</a><a href="#themes">Themes</a><a href="#javascript">JavaScript API</a><a href="#php">PHP integration</a><a href="#coverage">Component coverage</a><a href="#contribute">Contributing</a><a href="#support">Support & license</a></nav>
+  <main class="guide-content" id="content">
+    <section id="start"><span class="eyebrow">DOCUMENTATION / V0.3.0</span><h1>Good UI.<br>Two files away.</h1><p class="sc-muted">bootstrapcn brings the clean visual style of shadcn/ui to Bootstrap, PHP and plain HTML. Add local CSS and JavaScript files, write familiar markup, and make it yours.</p><div class="action-row"><a class="sc-button" href="https://github.com/soumit101/bootstrapcn/releases/latest">Download latest release ↗</a><a class="sc-button sc-button-outline" href="../index.html#components">Explore components</a></div><p><span class="sc-badge">MIT licensed</span> <span class="sc-badge">53 example groups</span> <span class="sc-badge">10 palettes</span></p><div class="sc-alert"><strong>Built on Bootstrap 6 alpha</strong><p>The bundled dependency is pinned to 6.0.0-alpha.1. Use modern browsers: Chrome/Edge 130+, Firefox 132+, Safari 18+.</p></div></section>
+    <section id="installation"><h2>1. Copy the assets</h2><p>Download a release and copy its <code>dist/</code> folder into your public assets directory. Include the stylesheet and module script in your page:</p><pre><code>&lt;link rel="stylesheet" href="/assets/bootstrapcn/bootstrapcn.css"&gt;
+&lt;script type="module" src="/assets/bootstrapcn/bootstrapcn.js"&gt;&lt;/script&gt;</code></pre><p>Bootstrap and its JavaScript dependencies are already bundled. Load these files once per page. Serve them through HTTP or HTTPS with a JavaScript MIME type; module scripts do not run from <code>file://</code>. Adjust URLs for your public root or subdirectory.</p><p>Your PHP project needs no npm, React, Tailwind or compilation. The files make no runtime CDN requests.</p></section>
+    <section id="usage"><h2>2. Use HTML components</h2><p>Open any component in the <a href="../index.html#components">gallery</a>, expand <strong>View HTML</strong>, and copy its markup. Keep IDs unique when using more than one copy.</p><pre><code>&lt;button type="button" class="sc-button"
+        data-sc-toast="Changes saved"
+        data-sc-description="Your settings are up to date."&gt;
+  Show notification
+&lt;/button&gt;</code></pre><p>The stable markup API uses <code>.sc-*</code> classes, <code>data-sc-*</code> attributes and <code>--sc-*</code> CSS variables. Bootstrap components retain their Bootstrap 6 classes and <code>data-bs-*</code> attributes. CSS alone supports static components; use the module script for interactive controls.</p></section>
+    <section id="themes"><h2>3. Choose your theme</h2><p>Ten palettes work with light, dark or system mode: neutral, slate, stone, zinc, blue, green, rose, orange, violet and teal. Preferences persist in the browser and synchronize across tabs.</p><div class="sc-field"><label for="guide-palette">Try a palette</label><select class="sc-select" id="guide-palette" data-sc-palette-select><option>neutral</option><option>slate</option><option>stone</option><option>zinc</option><option>blue</option><option>green</option><option>rose</option><option>orange</option><option>violet</option><option>teal</option></select></div><pre><code>&lt;html lang="en" data-sc-palette="violet" data-sc-theme="system"&gt;</code></pre><p>Set an initial preference on the HTML element. A previously stored choice takes precedence. To customize the design, load your CSS after the library:</p><pre><code>:root {
+  --sc-radius: .75rem;
+}
+[data-bs-theme="light"] {
+  --sc-primary: #6d28d9;
+  --sc-primary-foreground: white;
+}</code></pre><p>Other tokens include <code>--sc-background</code>, <code>--sc-foreground</code>, <code>--sc-muted</code>, <code>--sc-muted-foreground</code>, <code>--sc-border</code>, <code>--sc-destructive</code> and <code>--sc-ring</code>.</p></section>
+    <section id="javascript"><h2>JavaScript API</h2><pre><code>&lt;script type="module"&gt;
+  import { BootstrapCN, Dialog } from '/assets/bootstrapcn/bootstrapcn.js';
+
+  BootstrapCN.setPalette('blue');
+  BootstrapCN.setTheme('dark');
+  BootstrapCN.toast('Saved', { description: 'Your changes are ready.' });
+
+  // After inserting component HTML:
+  BootstrapCN.init(document.querySelector('#new-content'));
+
+  // Before removing an initialized subtree:
+  BootstrapCN.dispose(document.querySelector('#old-content'));
+&lt;/script&gt;</code></pre><div class="sc-scroll-area"><table class="sc-table"><thead><tr><th>Method</th><th>Purpose</th></tr></thead><tbody><tr><td><code>setTheme(mode)</code></td><td>Set light, dark or system mode.</td></tr><tr><td><code>setPalette(name)</code></td><td>Choose one of <code>BootstrapCN.palettes</code>.</td></tr><tr><td><code>getTheme()</code> / <code>getPalette()</code></td><td>Read current preferences.</td></tr><tr><td><code>toast(title, options)</code></td><td>Show text-safe feedback. Options: description and duration. Returns element/dismiss. A duration of 0 keeps it open.</td></tr><tr><td><code>init(root)</code> / <code>dispose(root)</code></td><td>Initialize or clean up a dynamically inserted component subtree.</td></tr><tr><td><code>setDates(element, dates)</code></td><td>Update a datepicker and its external ISO form field.</td></tr></tbody></table></div><p>Bootstrap plugins are exported from the same file. Use ESM imports for reliable execution ordering. <code>window.BootstrapCN</code> is available once the module executes.</p></section>
+    <section id="php"><h2>PHP integration</h2><p>Use normal forms with named controls. The <a href="https://github.com/soumit101/bootstrapcn/blob/main/examples/starter.php">PHP starter</a> demonstrates POST validation, session-based CSRF protection, escaped output and retained field values.</p><pre><code>php -S 127.0.0.1:8080 -t .
+# Open http://127.0.0.1:8080/examples/starter.php</code></pre><p>GitHub Pages serves the gallery and documentation as static files. Run the PHP starter on a PHP server. It validates submissions without storing them; add your database handler as needed.</p><p>Inline calendars should bind a hidden ISO field outside their rendered container with <code>data-sc-date-input="field-id"</code>. OTP posts one complete code string; unchecked checkboxes are omitted from POST. Validate all values on the server. See the <a href="https://github.com/soumit101/bootstrapcn/blob/main/docs/COMPONENTS.md">component contracts</a> for detailed behavior.</p></section>
+    <section id="coverage"><h2>Component coverage</h2><p>The gallery contains 53 example groups representing 66 named patterns: forms, dialogs, menus, tables, calendars, OTP, charts, command search, sidebars, resizable panels, content and messaging primitives. The <a href="coverage.json">coverage map</a> records each name and example ID.</p><p>These are HTML/Bootstrap implementations of the patterns. The chart currently supports one nonnegative bar series. The data table filters, sorts, selects and paginates rows already rendered by your application. Message and attachment components need your application backend. Check each example's documented behavior before integrating it.</p></section>
+    <section id="contribute"><h2>Built to be contributed to</h2><p>Bug reports, documentation, accessibility fixes, component examples and code improvements are welcome.</p><pre><code>git clone https://github.com/soumit101/bootstrapcn.git
+cd bootstrapcn
+npm ci
+npm run serve
+
+npm run build
+npm test
+npm run check:generated
+npx playwright install chromium --with-deps
+npm run test:browser</code></pre><p>Read <a href="https://github.com/soumit101/bootstrapcn/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> before opening a pull request. Make changes in <code>src/</code>, rebuild the committed distribution, and include a focused description of what changed and how you tested it.</p><div class="action-row"><a class="sc-button sc-button-outline" href="https://github.com/soumit101/bootstrapcn/issues">Browse issues ↗</a><a class="sc-button sc-button-outline" href="https://github.com/soumit101/bootstrapcn/discussions">Ask a question ↗</a></div></section>
+    <section id="support"><h2>Support & license</h2><p>bootstrapcn is MIT licensed and independent of Bootstrap and shadcn/ui. Third-party licenses ship with the distribution. Report reproducible bugs through <a href="https://github.com/soumit101/bootstrapcn/issues/new/choose">GitHub Issues</a>; report vulnerabilities through <a href="https://github.com/soumit101/bootstrapcn/security/advisories/new">private security reporting</a>.</p></section>
+    <footer class="site-footer"><span>bootstrapcn / 0.3.0</span><a href="https://github.com/soumit101/bootstrapcn">View source & contribute ↗</a></footer>
+  </main>
+</div>
+</body></html>

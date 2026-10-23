@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Usage questions and ideas
+    url: https://github.com/soumit101/bootstrapcn/discussions
+    about: Ask questions, share examples, or discuss an idea before implementing it.
+  - name: Security vulnerability
+    url: https://github.com/soumit101/bootstrapcn/security/advisories/new
+    about: Report a vulnerability privately.

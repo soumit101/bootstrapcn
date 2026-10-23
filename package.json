@@ -1,0 +1,25 @@
+{
+  "name": "bootstrapcn",
+  "version": "0.3.0",
+  "description": "shadcn-inspired components powered by Bootstrap. Drop-in CSS and JavaScript for PHP and plain HTML.",
+  "license": "MIT",
+  "author": "bootstrapcn contributors",
+  "homepage": "https://soumit101.github.io/bootstrapcn/",
+  "repository": { "type": "git", "url": "https://github.com/soumit101/bootstrapcn.git" },
+  "bugs": { "url": "https://github.com/soumit101/bootstrapcn/issues" },
+  "keywords": ["bootstrap", "shadcn", "php", "components", "css", "vanilla-js", "no-build"],
+  "type": "module",
+  "files": ["dist/", "README.md", "LICENSE"],
+  "exports": { ".": "./dist/bootstrapcn.js", "./css": "./dist/bootstrapcn.css", "./dist/*": "./dist/*" },
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node scripts/gallery.mjs && node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node scripts/test-browser.mjs",
+    "test:php": "node tests/php.mjs",
+    "check:generated": "node scripts/check-generated.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

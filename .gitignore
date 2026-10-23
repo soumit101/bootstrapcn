@@ -1,0 +1,11 @@
+node_modules/
+test-results/
+*.log
+*.zip
+.site/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+scripts/.github-publish.mjs

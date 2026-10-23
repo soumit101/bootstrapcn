@@ -1,0 +1,22 @@
+{
+  "Accordion": "accordion", "Alert": "alert", "Alert Dialog": "alert-dialog",
+  "Aspect Ratio": "aspect-ratio", "Attachment": "attachment", "Avatar": "avatar",
+  "Badge": "badge", "Breadcrumb": "breadcrumb", "Bubble": "messages",
+  "Button": "buttons", "Button Group": "button-group", "Calendar": "calendar",
+  "Card": "card", "Carousel": "carousel", "Chart": "chart", "Checkbox": "checks",
+  "Code Block": "code-block", "Collapsible": "collapsible", "Combobox": "select",
+  "Command": "command", "Context Menu": "context-menu", "Data Table": "data-table",
+  "Date Picker": "date-picker", "Dialog": "dialog", "Direction": "direction",
+  "Drawer": "sheet", "Dropdown Menu": "menu", "Empty": "empty", "Field": "field",
+  "Hover Card": "hover-card", "Input": "input", "Input Group": "input-group",
+  "Input OTP": "input-otp", "Item": "item", "Kbd": "separator", "Label": "input",
+  "Marker": "messages", "Menubar": "menubar", "Message": "messages",
+  "Message Scroller": "messages", "Native Select": "select", "Navigation Menu": "navigation-menu",
+  "Pagination": "breadcrumb", "Popover": "tooltip", "Progress": "progress",
+  "Questionnaire": "questionnaire", "Radio Group": "checks", "Resizable": "resizable",
+  "Scroll Area": "scroll-area", "Select": "select", "Separator": "separator",
+  "Sheet": "sheet", "Sidebar": "sidebar", "Skeleton": "skeleton", "Slider": "progress",
+  "Spinner": "spinner", "Switch": "checks", "Table": "table", "Tabs": "tabs",
+  "Textarea": "textarea", "Toast": "toast", "Toggle": "toggle", "Toggle Group": "toggle-group",
+  "Tooltip": "tooltip", "Trace": "trace", "Typography": "typography"
+}

@@ -1,0 +1,10 @@
+import { mkdirSync, copyFileSync, cpSync, readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const version = JSON.parse(readFileSync('package.json','utf8')).version;
+execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'inherit'});
+const folder = `test-results/bootstrapcn-${version}`;
+mkdirSync(folder + '/dist',{recursive:true});
+for (const name of ['bootstrapcn.css','bootstrapcn.js','manifest.json','THIRD-PARTY-LICENSES.txt','LICENSE.txt']) copyFileSync('dist/' + name, folder + '/dist/' + name);
+for (const name of ['README.md','LICENSE','CHANGELOG.md','CONTRIBUTING.md','CODE_OF_CONDUCT.md','SECURITY.md','index.html']) copyFileSync(name,folder + '/' + name);
+for (const directory of ['docs','examples']) cpSync(directory,folder + '/' + directory,{recursive:true});
+console.log('Release assets prepared in ' + folder);

@@ -1,0 +1,14 @@
+{
+  "version": "0.3.0",
+  "bootstrap": "6.0.0-alpha.1",
+  "files": {
+    "bootstrapcn.css": {
+      "bytes": 404988,
+      "integrity": "sha384-7be91QQHiTOgG5C13sM5OQ72KYAbo43G3ysEnbhB/SedEWfHqG/jRq2C3UY02/I8"
+    },
+    "bootstrapcn.js": {
+      "bytes": 241032,
+      "integrity": "sha384-61yL0esBVrpBl1E7u46xAESlmQUg6o7K1JZJXKWjRPw8XQy1Doz3QcIOzfBjdHuf"
+    }
+  }
+}
